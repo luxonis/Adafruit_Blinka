@@ -5,7 +5,9 @@ def init_specific_board(serial):
     os.environ["CURRENT_BOARD_SERIAL"] = serial
     import board
     import busio
-    return board, busio
+    import digitalio
+    return board, busio, digitalio
+
 
 def RP2040_u2if_init(serial):
     os.environ["CURRENT_BOARD_SERIAL"] = serial
