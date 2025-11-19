@@ -67,12 +67,13 @@ class I2C_Pico(I2C):
             index = 0
         if scl.id == 15 and sda.id == 14:
             index = 1
+        if scl.id == 25 and sda.id == 24:
+            index = 0
         if index is None:
             raise ValueError("I2C not found on specified pins.")
         self._index = index
 
         super().__init__(index, frequency=frequency)
-
 
 class I2C_Feather(I2C):
     """I2C Class for Feather u2if"""
